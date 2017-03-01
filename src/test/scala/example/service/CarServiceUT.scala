@@ -18,10 +18,7 @@ class CarServiceUT extends FlatSpec with Matchers {
 
   it should "return a Car with the id 999 that the mock returns" in {
 
-
-    val carRepoMock = new CarRepoMock
-
-    val carService = new CarService(carRepo = carRepoMock)
+    val carService = new CarService(new CarRepoMock)
 
 
     carService.getById(1).id should be(999)
