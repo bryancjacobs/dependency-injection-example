@@ -9,6 +9,10 @@ import example.repo.CarRepo
 class CarService(carRepo: CarRepo) {
 
   def getById(id: Int): Car = {
+
+    // not dependency injection and the reason it exists
+    // val carRepo = new CarRepo
+
     carRepo.getById(id)
   }
 
